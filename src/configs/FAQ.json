@@ -1,0 +1,12 @@
+{
+  "faqs": [
+    {
+      "question": "Làm sao để nạp tiền",
+      "answer": "Hiện tại khi bạn tạo 1 tài khoản trên TimebitOTC hệ sẽ cấp cho các\nbạn 1 số thẻ virtual account của ngân hàng Đại Chúng (PVcombank). Việc sử dụng\nvirtualbank này cũng như những ngân hàng thông thường.\n\n \n\n·        \nBạn chọn Deposit -> chọn loại tiền VNĐ -> chọn Chuyển khoản ngân hàng ( tự động) \n\n Bước này hệ thống sẽ hiển thị cho bạn thông tin\nngân hàng mà hệ thống cấp cho bạn Và bạn cần chuyển tiền vào số thẻ đó. Sau khi đã chuyển khoản\nthành công chọn Nhấn vào đây nếu bạn đã chuyển tiền là hoàn\nthành."
+    },
+    {
+      "question": "Tại sao tiền không về tài khoản",
+      "answer": "Khi bạn giao dịch rút tiền về tài khoản nhưng không thành công là do họ tên tại ví và họ tên bank không khớp\n\nCách khắc phục:\n\nBạn cần yêu cầu đổi lại tên tại thông tin cá nhân"
+    }
+  ]
+}

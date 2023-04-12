@@ -1,0 +1,36 @@
+@media screen and (max-width: $mobile-breakpoint) {
+  .nk-sidebar-menu {
+    height: auto;
+    overflow: hidden scroll;
+  }
+}
+
+.not-collapsed ~ .nk-menu-sub.show {
+  display: block !important;
+}
+
+.nk-menu-sub {
+  &.collapsing {
+    padding-bottom: 0;
+    display: none;
+    transition: all .2s;
+  }
+
+  &.collapse {
+    &.show {
+      display: block!important;
+    }
+  }
+}
+
+.nk-menu-sub {
+  padding: 0 !important;
+}
+
+.nk-menu-link {
+  &.not-collapsed {
+    &:after {
+      transform: translateY(-50%) rotate(90deg);
+    }
+  }
+}

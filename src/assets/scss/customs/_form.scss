@@ -1,0 +1,36 @@
+.col-form-label.form-label-group {
+  padding-bottom: 0;
+}
+
+//.form-control-wrap {
+//  ~ .invalid-feedback {
+//    display: block;
+//  }
+//}
+
+.invalid-feedback {
+    display: block !important;
+}
+
+:deep {
+    .invalid-feedback {
+        display: block !important;
+    }
+}
+
+.custom-switch .custom-control-input:checked ~ .custom-control-label::after {
+    background-color: #fff !important;
+}
+
+.custom-checkbox .custom-control-input:disabled:checked {
+    ~ .custom-control-label {
+        &:before {
+            //background-color: $text-muted !important;
+            //border-color: $text-muted !important;
+        }
+
+        &:after {
+            color: $light;
+        }
+    }
+}

@@ -1,0 +1,88 @@
+.service-version {
+  border-bottom: 1px solid #eee;
+}
+.service-image {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  & > div.service-image-wrapper {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary);
+    border-radius: 10px;
+    border: 1px solid var(--primary);
+    margin-right: 10px;
+    transition: all 0.25s ease;
+    flex-shrink: 0;
+    img {
+      width: 65% !important;
+    }
+  }
+}
+.bank-service-item-link {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -100%);
+  background-color: rgba(57, 103, 214, 0.2);
+  opacity: 0;
+  transition: all 0.25s ease;
+  li {
+    box-shadow: rgba(0, 0, 0, 0.3) 0 0 10px;
+  }
+}
+.bank-service-item {
+  &:hover {
+    .bank-service-item-link {
+      opacity: 1;
+      display: flex !important;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+#modal-process,
+#modal-buy {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 99999;
+  .modal-buy-wrapper {
+    width: 450px;
+    max-width: calc(100% - 2rem);
+    border-radius: 40px;
+    padding: 2rem 2rem;
+    svg {
+      width: 100px;
+    }
+    h5 {
+      line-height: 25px;
+    }
+  }
+  .close-modal-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 30px;
+  }
+}
+.show-sub-sidebar-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+#card-aside-content {
+  &.isShow {
+    min-height: calc(100vh + 10px);
+    transform: translateX(0);
+  }
+}

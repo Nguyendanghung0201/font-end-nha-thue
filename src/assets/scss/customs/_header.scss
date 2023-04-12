@@ -1,0 +1,100 @@
+@include media-breakpoint-up(lg) {
+    .nk-menu {
+        .nk-menu-sub {
+            .dropdown-menu {
+                background: $header-bg-sub-bg;
+                border: 0;
+                -webkit-border-radius: 0;
+                -moz-border-radius: 0;
+                border-radius: 0;
+                margin-left: 0;
+
+                .dropdown-item {
+                    color: $menu-main-link-color-base;
+                    background: rgba(#fff, 0.04);
+                    border-radius: 0 !important;
+
+                    &.active {
+                        color: $header-bg-sub-color;
+                        background: rgba(#fff, 0.04);
+                    }
+
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        color: $header-bg-sub-color;
+                        background: rgba(#fff, 0.08);
+                    }
+                }
+            }
+
+            background: $header-bg-sub-bg;
+            color: $header-bg-sub-color;
+            border: 0;
+            margin-top: 1px;
+            min-width: 250px;
+
+            .nk-menu-item {
+                > a,
+                > span.nk-menu-link {
+                    color: $menu-main-link-color-base;
+                }
+
+                &:hover > a,
+                &:hover > span.nk-menu-link {
+                    background: rgba(#fff, 0.04);
+                }
+            }
+
+            .nk-menu {
+                &-link:hover,
+                &-link:focus,
+                &-item.active > .nk-menu-link,
+                &-item.current-menu > .nk-menu-link,
+                &-item:hover > .nk-menu-link {
+                    color: $header-bg-sub-color;
+                }
+            }
+
+            .nk-menu-link {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nk-menu-text {
+                display: flex;
+                align-items: center;
+
+                &:before {
+                    content: '';
+                    box-sizing: border-box;
+                    min-width: 0;
+                    display: inline-block;
+                    background-color: $primary;
+                    width: 6px;
+                    height: 6px;
+                    position: relative;
+                    -webkit-transform: rotate(45deg);
+                    -ms-transform: rotate(45deg);
+                    transform: rotate(45deg);
+                    margin-right: 0.5rem;
+                }
+            }
+
+            .nk-menu-subtext {
+                color: rgba(#fff, 0.3);
+                font-size: 0.75rem;
+                font-weight: normal;
+                padding-left: 0.9rem;
+                width: 100%;
+                display: block;
+                @include text-truncate
+            }
+        }
+    }
+}
+
+.is-darkness {
+    background: $is-darkness-color;
+    border-color: $is-darkness-border-color;
+}

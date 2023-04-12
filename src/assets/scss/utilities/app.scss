@@ -1,0 +1,19 @@
+@import "utilities";
+@import "mixins";
+
+// PAGE
+@import "./page/login";
+@import "./page/profile";
+@import "./page/dashboard";
+@import "./page/service";
+@import "./page/support";
+@import "./page/bank";
+@import "./page/tooltip";
+
+// COMPONENT
+@import "./component/sidebar";
+@import "./component/header";
+@import "./component/config";
+@import "./component/loading";
+
+@import "responsive";

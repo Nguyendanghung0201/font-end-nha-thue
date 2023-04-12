@@ -1,0 +1,83 @@
+@media screen and (max-width: 1440px){
+  .bank-card {
+    width: calc(50% - 40px);
+  }
+  .custom-modal {
+    .modal-content {
+      width: 60%;
+    }
+  }
+}
+
+@media screen and (min-width: 768px){
+  .card-info {
+    width: 100%;
+    &:nth-child(2) {
+      border-left: 1px solid #eee;
+      border-right: 1px solid #eee;
+    }
+  }
+}
+@media screen and (max-width: 767px){
+  .bank-card {
+    width: 100%;
+    margin: 0;
+    & + .bank-card {
+      margin-top: 16px;
+    }
+  }
+  .card-info {
+    width: 100%;
+    &:nth-child(2) {
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+    }
+  }
+  .c-m-sm-0 {
+    margin: 0;
+  }
+  .w-sm-100 {
+    width: 100% !important;
+  }
+  .w-sm-50 {
+    width: 50% !important;
+  }
+  .w-sm-75 {
+    width: 75% !important;
+  }
+  .card-sm {
+    padding: 16px;
+  }
+  .onOff-btn-mobile {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+  }
+  .nk-tb-list {
+    max-width: 100%;
+  }
+  .p-sm-20 {
+    padding-left: 20px;
+  }
+  .w-sm-30 {
+    width: 30%;
+  }
+  .custom-modal {
+    .modal-content {
+      width: 100%;
+    }
+  }
+  .timeline-data {
+    padding-top: 0;
+  }
+}
+@media (max-width: 1440px) and (min-width: 768px) {
+  .ps-md-40 {
+    padding-left: 40px !important;
+  }
+}
+@media screen and (min-width: 1440px){
+  .nk-files-view-grid .nk-file {
+    width: calc(14.2857% - 16px);
+  }
+}

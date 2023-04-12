@@ -1,0 +1,20 @@
+.custom-dropdown {
+  margin-top: 0 !important;
+  left: 5px !important;
+}
+.language-dropdown {
+  border-left: 1px solid #e5e9f2;
+}
+
+.subscribe-btn {
+  height: 65%;
+}
+@media screen and (max-width: 1200px){
+  .subscribe-btn {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    height: auto;
+    padding: 0.5rem 1rem !important;
+  }
+}

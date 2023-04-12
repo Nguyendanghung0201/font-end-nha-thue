@@ -1,0 +1,14 @@
+.copy-icon {
+  top: 10px;
+  right: 10px;
+}
+.settings-wrapper {
+  padding: 0 4rem !important;
+}
+
+@media screen and (max-width: 549px){
+  .settings-wrapper {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}

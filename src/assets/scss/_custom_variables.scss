@@ -1,0 +1,48 @@
+@import "~bootstrap/scss/functions";
+@import "dashlite_variables";
+// Included Bootstarp Variables
+@import "extend/bootstrap/variables";
+//@import "libs/fontawesome-icons";
+
+
+$darker: #12161c;
+$warning: #F0B90B;
+$primary: #3967D6;
+$success: #02c076;
+
+$light-primary: rgb(85 155 251 / 18%);
+$header-bg-dark-color: $darker;
+$header-bg-sub-bg: #12161c; // $accent-100
+$header-bg-sub-hover-bg: rgba(255, 255, 255, 0.04); // $accent-100
+$header-bg-sub-color: #fff; // $accent-500
+
+// Main Menu
+$menu-main-link-color-base: #9faec2;
+$menu-main-link-gap-y: .5rem;
+$menu-main-link-gap-x: 1.25rem;
+
+// SET RTL OPTION
+$rtl: false;
+
+// Button
+$btn-font-weight: 500;
+
+// Custom control
+$custom-control-indicator-checked-color: $primary;
+$custom-control-indicator-checked-bg: #fff;
+$custom-control-indicator-active-bg: #fff;
+
+$fw-700: 500;
+$fw-bold: 500;
+$font-weight-bold: 500;
+$font-weight-bolder: 600;
+$header-font-weight: 500;
+$headings-font-weight: 500;
+$mobile-breakpoint: 768px; // max-width
+$desktop-breakpoint: 766px; // min-width
+//header
+$is-darkness-color: #181A20;
+$is-darkness-border-color: #181A20;
+$form-group-margin-bottom: 1.25rem;
+
+@import "~bootstrap/scss/mixins";

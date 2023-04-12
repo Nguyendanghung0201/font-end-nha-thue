@@ -1,0 +1,21 @@
+export default {
+    support_team: "đội hỗ trợ",
+    support_tittle: "Bạn có một câu hỏi? Hay có thắc mắc gì về dịch vụ đang tìm kiếm? Đừng lo lắng, hãy liên hệ với",
+    support_sub: "Chúng tôi ở đây để giúp bạn! | Hãy để lại 1 câu hỏi về dịch vụ hay bất kỳ thắc mắc nào của bạn. Đội hỗ trợ của chúng tôi sẽ liên hệ ngay với bạn bằng email.",
+    support_note: "Chúng tôi sẽ hỗ trợ bạn nhanh nhất có thể.",
+    support_center: "Trung tâm hỗ trợ",
+    support_history: "Lịch sử hỗ trợ",
+    support: "yêu cầu hỗ trợ",
+    support_status: "Trạng thái",
+    support_person: "Người hỗ trợ",
+    support_time: "Thời gian tạo",
+    support_detail: "Chi tiết",
+    support_email: "Email",
+    support_content: "Nội dung",
+    support_by: "Tạo bởi",
+    processing: "Đang xử lý",
+    success: "Hoàn thành",
+    rejected: "Bị từ chối",
+    reason: "Lí do từ chối",
+    all: "Tất cả"
+}

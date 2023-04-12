@@ -1,0 +1,21 @@
+export default {
+    support_team: "support team",
+    support_tittle: "Got a question? Can't find the answer you're looking for? Don't worry, drop us a line on our",
+    support_sub: "We’re here to help you! | Ask a question or report an issues. Our team support team will get back to you by email.",
+    support_note: "Tell us more and we'll help you get there.",
+    support_center: "Support Center",
+    support_history: "History Support",
+    support: "requires",
+    support_status: "Status",
+    support_person: "Check by",
+    support_time: "Created at",
+    support_detail: "Details",
+    support_email: "Email",
+    support_content: "Content",
+    support_by: "Created by",
+    processing: "Pending",
+    success: "Completed",
+    rejected: "Canceled",
+    reason: "Reason for reject",
+    all: "All"
+}

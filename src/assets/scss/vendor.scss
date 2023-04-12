@@ -1,0 +1,21 @@
+//@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css");
+// Included Fonts
+/** 01. FONTS */
+@import "core/fonts/roboto";
+
+// Included Global
+@import "global/styles";
+
+// - Chats
+
+// Included Bootstarp
+@import "extend/bootstrap/bootstrap";
+@import "extend/bootstrap/extend";
+
+// Include Other Vendors
+@import "vendors/bundle";
+
+// Include Core ePayGate Agent Style
+@import "core/styles";
+
+//@import "~bootstrap-vue/src/index";

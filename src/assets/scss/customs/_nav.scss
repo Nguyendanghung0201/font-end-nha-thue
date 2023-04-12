@@ -1,0 +1,27 @@
+.show-currency {
+    background-color: $primary;
+    color: $white;
+    line-height: 16px;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin-left: 8px;
+    font-size: 12px;
+
+    &:before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        left: -6px;
+        top: 2px;
+        border-style: solid;
+        border-top-width: 6px;
+        border-right-width: 6px;
+        border-bottom-width: 6px;
+        border-left-width: 0;
+        border-top-color: transparent;
+        border-right-color: $primary;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+}

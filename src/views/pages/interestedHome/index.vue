@@ -1,0 +1,482 @@
+<template>
+  <div class="nk-content nk-content-fluid pt-0">
+    <div class="container-xl wide-lg">
+      <div class="nk-content-body">
+        <div class="nk-block-head nk-block-head-sm">
+          <div
+            class="nk-block-between flex-column flex-sm-row align-items-start align-items-sm-center justify-content-start justify-content-sm-between"
+          >
+            <div class="nk-block-head-content">
+              <h3 class="nk-block-title page-title">
+                {{ $t("home.list_interested_home") }}
+              </h3>
+              <div class="nk-block-des text-soft">
+                <p>{{ $t("home.description_interested_host") }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- button filter -->
+        <!-- <div
+          class="d-md-flex d-none nk-block-head nk-block-head-sm d-flex justify-content-end"
+        >
+          <a
+            href="#"
+            type="button"
+            class="btn btn-primary mr-2"
+            data-toggle="modal"
+            data-target="#modalDefault"
+            ><span>{{ $t("home.city") }}</span
+            ><em class="icon ni ni-filter"></em
+          ></a>
+          <a
+            href="#"
+            type="button"
+            class="btn btn-primary mr-2"
+            data-toggle="modal"
+            data-target="#modalAlong"
+            ><span>{{ $t("home.train_station") }}</span
+            ><em class="icon ni ni-filter"></em
+          ></a>
+          <a href="#" class="btn btn-danger" v-on:click="resetListRealHouse">
+            <span style="margin-right: 8px">{{ $t("home.reset") }}</span>
+            <b-icon
+              icon="arrow-counterclockwise"
+              style="width: 18px; height: 18px"
+            ></b-icon
+          ></a>
+        </div> -->
+        <!-- end -->
+        <div
+          class="d-md-none d-block nk-block-head nk-block-head-sm d-flex justify-content-end"
+        >
+          <!-- <a
+            href="#"
+            type="button"
+            class="btn btn-primary mr-2"
+            data-toggle="modal"
+            data-target="#modalDefault"
+            ><em class="icon ni ni-filter"></em
+          ></a> -->
+          <div class="dropdown">
+            <a
+              class="dropdown-toggle btn btn-icon btn-light"
+              data-toggle="dropdown"
+              aria-expanded="false"
+              ><em class="icon ni ni-filter"></em
+            ></a>
+            <div class="dropdown-menu dropdown-menu-right" style="">
+              <ul class="link-list-opt no-bdr">
+                <li>
+                  <a href="#" data-toggle="modal" data-target="#modalDefault"
+                    ><span>{{ $t("home.city") }}</span></a
+                  >
+                </li>
+                <li>
+                  <a href="#" data-toggle="modal" data-target="#modalAlong"
+                    ><span>{{ $t("home.train_station") }}</span></a
+                  >
+                </li>
+                <li>
+                  <a href="#" v-on:click="resetListRealHouse">
+                    <span style="margin-right: 8px">{{
+                      $t("home.reset")
+                    }}</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="nk-block">
+          <div class="row g-gs">
+            <div
+              v-if="data.length === 0"
+              class="min-h-500px no-data d-flex align-items-center justify-center card border text-center font-weight-bold"
+            >
+              {{ $t("home.no_data") }}
+            </div>
+
+            <div
+              v-else
+              class="col-xxl-12 col-lg-12 col-sm-12"
+              v-for="item in formatListHome"
+              :key="item.id"
+            >
+              <div class="card card-bordered product-card">
+                <div class="d-xxl-flex d-lg-flex">
+                  <div class="col-xxl-3 col-lg-3 col-12">
+                    <router-link
+                      :to="{
+                        name: 'interested_home.detail',
+                        params: { id: item.id },
+                      }"
+                    >
+                      <img class="card-img-top" :src="item.images" alt="" />
+                    </router-link>
+                  </div>
+                  <div class="col-xxl-9 col-lg-9 col-12 p-0">
+                    <div class="card-inner">
+                      <div class="d-flex justify-content-between align-center">
+                        <h5 class="product-title">
+                          <router-link
+                            :to="{
+                              name: 'interested_home.detail',
+                              params: { id: item.id },
+                            }"
+                          >
+                            <span>{{ item.name }} </span>
+                          </router-link>
+                        </h5>
+                        <div>
+                          <a
+                            href="#"
+                            v-on:click="careAboutHome(item.build_id, item.name)"
+                            class="btn btn-round btn-icon btn-outline-danger"
+                            ><em class="icon ni ni-trash"></em
+                          ></a>
+                        </div>
+                      </div>
+
+                      <!-- gia -->
+
+                      <div class="row">
+                        <div class="col-sm-6 col-12">
+                          <span class="text-dark font-weight-bold"
+                            >{{ $t("home.price") }}:</span
+                          >
+                          <span class="price text-danger">
+                            {{ item.price ?? "--" }} ~
+                          </span>
+                          <span class="text-dark font-weight-bold"
+                            >({{ $t("home.rental_fee") }}:
+                            {{ item.rental_fee ?? "--" }})</span
+                          >
+                        </div>
+                        <div class="col-sm-6 col-12">
+                          {{ item.line ?? "--" }}
+                        </div>
+                        <div class="col-sm-6 col-12">
+                          {{ item.address ?? "--" }}
+                        </div>
+                      </div>
+                      <!-- end -->
+                      <hr />
+                      <div class="row">
+                        <div class="col-6 col-sm-4">
+                          <ul>
+                            <li>
+                              <span class="font-weight-bold text-dark">{{
+                                $t("home.area")
+                              }}</span
+                              >: {{ item.area }}
+                            </li>
+                            <li>
+                              <span class="font-weight-bold text-dark">{{
+                                $t("home.deposit_depreciation")
+                              }}</span
+                              >: {{ item.formatFee ?? "--" }}
+                            </li>
+                            <li>
+                              <span class="font-weight-bold text-dark">{{
+                                $t("home.move_in_date")
+                              }}</span
+                              >: {{ item.date ?? "--" }}
+                            </li>
+                          </ul>
+                        </div>
+                        <!-- <div class="col-6 col-sm-4">
+                          <ul>
+                            <li v-for="item in item.infoRoom" :key="item.index">
+                              <span class="font-weight-bold text-dark">{{
+                                item.key
+                              }}</span
+                              >: {{ item.value ?? "--" }}
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="col-6 col-sm-4">567</div> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Paginate -->
+      <b-row v-if="data.length" class="row mt-3 mb-3">
+        <b-col class="ml-auto col-auto">
+          <nav>
+            <b-pagination
+              v-model.trim="paginationData.currentPage"
+              :per-page="paginationData.perPage"
+              :total-rows="paginationData.total"
+              align="right"
+              size="sm"
+            ></b-pagination>
+          </nav>
+        </b-col>
+      </b-row>
+      <!--End Paginate -->
+    </div>
+    <modal-Filter-Province
+      v-on:confim-filter="handleFilterCity"
+      v-on:reset-filter="resetFilter"
+    ></modal-Filter-Province>
+
+    <modal-Filter-Along
+      v-on:confim-filter="handleFilterAlong"
+      v-on:reset-filter="resetFilterAlong"
+    ></modal-Filter-Along>
+  </div>
+</template>
+
+<script>
+import { formatViDate, formatEnDate, getLanguage } from "@/helpers/common";
+import NoData from "@/views/components/NoData/index";
+import modalFilterProvince from "./modalFilterProvince.vue";
+import modalFilterAlong from "./modalFilterAlong.vue";
+import i18n from "@/utils/i18n";
+
+export default {
+  name: "Dashboard",
+  data() {
+    return {
+      data: [],
+      paginationData: {
+        currentPage: 1,
+        perPage: 4,
+        total: 0,
+        sort: "desc",
+      },
+      filter: {
+        provice_code: null,
+        city_code: null,
+        along_code: null,
+        search: null,
+      },
+      searchTimer: null,
+      optionShow: [
+        { value: 4, text: 4 },
+        { value: 8, text: 8 },
+        { value: 12, text: 12 },
+      ],
+      optionSort: [
+        { value: "desc", text: "DESC" },
+        { value: "asc", text: "ASC" },
+      ],
+    };
+  },
+  components: {
+    NoData,
+    modalFilterProvince,
+    modalFilterAlong,
+  },
+  mounted() {
+    this.getListService();
+  },
+  computed: {
+    lang() {
+      return getLanguage();
+    },
+    formatListHome() {
+      return this.data.map((v) => {
+        let amount = v.price
+          .replace(/\s/g, "")
+          .split("円")
+          .join("円 ")
+          .trim()
+          .split(" ");
+        let formatFee = v.fee.trim().split("敷引・償却:");
+        let date = v.date.trim().split("\n");
+        let infoRoom = JSON.parse(v.list_infor_user);
+        v.price = amount[0];
+        v.rental_fee = amount[1];
+        v.formatFee = formatFee[1].trim();
+        v.date = date[0];
+        v.infoRoom = infoRoom;
+        return v;
+      });
+    },
+  },
+  methods: {
+    formatViDate,
+    formatEnDate,
+    getListService() {
+      this.setLoadingState(true);
+      let postData = {
+        page: this.paginationData.currentPage,
+        perPage: this.paginationData.perPage,
+        sort: this.paginationData.sort,
+      };
+
+      if (this.filter) {
+        this.lodash.forEach(this.filter, (v, k) => {
+          if (!v) return;
+          postData[k] = v;
+        });
+      }
+
+      this.$store
+        .dispatch("Home/listCareHome", postData)
+        .then((response) => {
+          console.log(response);
+          if (response.code === 0 && response.success) {
+            this.data = response.data.data;
+            if (response.data.pagination) {
+              const pagination = response.data.pagination;
+              this.paginationData = this.lodash.extend(
+                {},
+                this.paginationData,
+                {
+                  currentPage: pagination.currentPage,
+                  total: pagination.total,
+                }
+              );
+            }
+
+            this.setLoadingState(false);
+          }
+        })
+        .catch((e) => {
+          this.setFormError(e);
+        })
+        .finally(() => {
+          this.requestLoading = false;
+          this.setLoadingState(false);
+        });
+    },
+    submiCareHome(id) {
+      const postData = {
+        id,
+      };
+      this.$store
+        .dispatch("Home/deleteCareHome", postData)
+        .then((response) => {
+          if (response.code === 0 && response.success) {
+            this.getListService();
+          }
+        })
+        .catch((e) => {
+          this.setFormError(e);
+        })
+        .finally(() => {
+          this.requestLoading = false;
+        });
+    },
+    careAboutHome(id, name) {
+      if (!id) return;
+      this.$confirm(
+        this.$i18n.t("home.title_home_care_delete", {
+          code: name,
+        }),
+        i18n.t("home.please_confirm"),
+        {
+          icon: "warning",
+          confirmButtonColor: "#1ee0ac",
+          cancelButtonColor: "#d33",
+          cancelButtonText: i18n.t("button.cancel"),
+          confirmButtonText: i18n.t("button.delete"),
+        }
+      ).then(({ value }) => {
+        if (value) {
+          this.submiCareHome(id);
+          this.$awnSuccess(this.$t("dialog.successfully"));
+        }
+      });
+    },
+    handleFilterCity(provice, city) {
+      this.filter.provice_code = provice;
+      this.filter.city_code = city;
+      this.filter.along_code = null;
+      $("#modalDefault").modal("hide");
+      if (provice !== null) {
+        this.getListService();
+      }
+    },
+    resetFilter(provice, city) {
+      $("#modalDefault").modal("hide");
+      if (provice === null && city === null) {
+        this.filter.provice_code = provice;
+        this.filter.city_code = city;
+        this.getListService();
+      }
+    },
+    handleFilterAlong(provice, along) {
+      this.filter.provice_code = provice;
+      this.filter.along_code = along;
+      this.filter.city_code = null;
+
+      $("#modalAlong").modal("hide");
+      if (provice !== null) {
+        this.getListService();
+      }
+    },
+    resetFilterAlong(provice, along) {
+      $("#modalAlong").modal("hide");
+      if (provice === null && along === null) {
+        this.filter.provice_code = provice;
+        this.filter.along_code = along;
+        this.getListService();
+      }
+    },
+    resetListRealHouse() {
+      this.filter.provice_code = null;
+      this.filter.city_code = null;
+      this.filter.along_code = null;
+      this.getListService();
+    },
+  },
+  watch: {
+    "paginationData.currentPage"(newVal, oldVal) {
+      if (newVal && +newVal !== +oldVal) {
+        this.getListService();
+      }
+    },
+    "paginationData.perPage"(newVal) {
+      if (newVal) {
+        this.paginationData.currentPage = 1;
+        this.getListService();
+      }
+    },
+    "paginationData.sort"(newVal) {
+      if (newVal) {
+        this.getListService();
+      }
+    },
+    "filter.search"(newVal, oldVal) {
+      if (this.searchTimer) clearTimeout(this.searchTimer);
+      this.searchTimer = setTimeout(() => {
+        this.paginationData.currentPage = 1;
+        this.getListService();
+      }, 500);
+    },
+  },
+  metaInfo() {
+    return {
+      title: this.$t("menu.dashboard"),
+    };
+  },
+};
+</script>
+<style lang="scss" scoped>
+.card-inner {
+  .product-title {
+    a {
+      text-decoration: underline;
+    }
+    a:hover {
+      color: #f90 !important;
+      text-decoration: none;
+    }
+  }
+  .price {
+    font-size: 18px;
+    font-weight: 900;
+  }
+}
+</style>
+
+<style scoped lang="scss" src="../../../assets/scss/utilities/app.scss"></style>

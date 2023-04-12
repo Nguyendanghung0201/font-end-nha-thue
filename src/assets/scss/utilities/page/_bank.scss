@@ -1,0 +1,422 @@
+#serivce-bank {
+  margin-top: 55px;
+}
+#bank-service {
+  margin-top: 55px;
+
+  .timeline-title {
+    &:hover {
+      color: #2c3782 !important;
+    }
+  }
+  //.invoice-bills {
+  //  max-height: calc(100vh - 250px);
+  //  overflow-y: auto;
+  //}
+}
+
+.bank {
+  &-card {
+    cursor: pointer;
+    width: calc(25% - 40px);
+    min-height: 200px;
+    max-width: 400px;
+    border-radius: 20px;
+    padding: 20px;
+    background: url('~@/assets/images/background-card.png') no-repeat center/cover;
+    background-blend-mode: screen;
+    height: 100%;
+    margin: 20px;
+
+    &-sm {
+      min-height: 190px;
+      max-height: 190px;
+
+      .account_number {
+        font-size: 17px;
+        margin: 12px 0;
+      }
+    }
+  }
+
+  &-name {
+    //letter-spacing: 2px;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    word-break: break-all;
+    white-space: normal;
+    font-size: 16px !important;
+  }
+
+  &-chip {
+    @include size(46px, 34px);
+    //background-color: #fff;
+    border-radius: 6px;
+    margin-right: 10px;
+    position: relative;
+    background-image: linear-gradient(to bottom left, #ffecc7, #d0b978);
+
+    .line-1 {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+      transform: translateX(-50%);
+      @include size(2px, 100%);
+      background-color: #333;
+      z-index: 8;
+    }
+
+    .line-2 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      @include size(18px, 34px);
+      border: 2px solid #333;
+      background-image: linear-gradient(to bottom left, #efdbab, #e1cb94);
+      z-index: 9;
+      border-radius: 5px;
+    }
+
+    .line-3 {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      @include size(100%, 2px);
+      background-color: #333;
+      z-index: 8;
+    }
+
+    .line-4 {
+      position: absolute;
+      top: 33%;
+      left: 0;
+      @include size(100%, 2px);
+      background-color: #333;
+      z-index: 8;
+    }
+
+    .line-5 {
+      position: absolute;
+      top: 67%;
+      left: 0;
+      @include size(100%, 2px);
+      background-color: #333;
+      z-index: 8;
+    }
+  }
+
+  &-trash {
+    position: absolute;
+    right: 24px;
+    bottom: 24px;
+  }
+}
+
+.account {
+  &_number {
+    letter-spacing: 8px;
+    font-size: 22px;
+    display: block;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    margin: 15px 0;
+    word-break: break-all;
+    white-space: normal;
+  }
+
+  &_name {
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    word-break: break-all;
+    white-space: normal;
+  }
+}
+
+.card-sm {
+  padding: 36px;
+}
+
+.bank {
+  &-list-icon {
+    .bank {
+      cursor: pointer;
+      padding: 20px 35px;
+
+      .user-avatar {
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+      }
+
+      &:hover {
+        background-color: var(--lighter);
+      }
+    }
+  }
+}
+
+.nk-files-view-grid .nk-file-icon-type {
+  width: 80px;
+}
+
+.input-counter {
+  display: none !important;
+}
+
+.steps-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.step {
+  &-number {
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+    background-color: #ccc;
+    border-radius: 50%;
+
+    &.active {
+      background-color: var(--primary);
+
+      .step-title {
+        color: var(--dark)
+      }
+    }
+  }
+
+  &-line {
+    height: 4px;
+    width: calc(100% - 300px);
+    background-color: #F4F5F7;
+
+    &.active {
+      background-color: var(--primary);
+    }
+  }
+
+  &-title {
+    white-space: nowrap;
+    color: #526484;
+  }
+}
+
+.card-bank {
+  & + .card-bank {
+    margin-top: 20px;
+  }
+}
+
+.nk-ibx-body {
+  overflow-y: auto;
+}
+
+.card-info {
+  width: 33.333333%;
+}
+
+.nk-ibx-head {
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  background-color: #FFFFFF;
+}
+.overlay-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 74px);
+  z-index: 999;
+  display: none;
+  background-color: rgba(57, 103, 214, 0.2);
+}
+.nk-ibx-aside {
+  &.content-active {
+    z-index: 9999;
+    & ~ .overlay-sidebar {
+      display: block;
+    }
+  }
+
+  z-index: 999;
+}
+
+.nk-wrap {
+  min-height: calc(100vh - 54px);
+}
+
+.c-dropdown {
+  .dropdown {
+    &-icon {
+      -webkit-transition: all 0.25s ease;
+      -moz-transition: all 0.25s ease;
+      -ms-transition: all 0.25s ease;
+      -o-transition: all 0.25s ease;
+      transition: all 0.25s ease;
+    }
+  }
+
+  &.show {
+    .dropdown-icon {
+      transform: rotate(180deg);
+    }
+
+    .dropdown-toggle {
+      background-color: transparent;
+      border-color: var(--dark);
+      color: var(--dark);
+    }
+  }
+  .dropdown-menu {
+    padding: 10px;
+    box-shadow: none;
+    outline: none;
+  }
+  li + li {
+    margin-top: 4px;
+  }
+  .active {
+    .dropdown-item {
+      background: transparent;
+      color: var(--dark);
+      border-color: var(--dark);
+    }
+  }
+  .dropdown-item {
+    border-radius: 4px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    color: #8094ae;
+    font-weight: 600;
+    &:hover{
+      background: transparent;
+      color: var(--dark);
+      border-color: var(--dark);
+    }
+  }
+  .btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active, .show > .btn-secondary.dropdown-toggle,
+  .btn-secondary:not(:disabled):not(.disabled):active:focus, .btn-secondary:not(:disabled):not(.disabled).active:focus, .show > .btn-secondary.dropdown-toggle:focus {
+    box-shadow: none;
+    color: var(--dark);
+    background-color: transparent;
+  }
+  .dropdown-toggle {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    color: #526484;
+    border-color: #EEEEEE;
+    &:focus {
+      box-shadow: none;
+    }
+    &:active,
+    &:hover {
+      background-color: transparent;
+      border-color: var(--dark);
+      color: var(--dark);
+    }
+  }
+}
+
+.custom-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+
+  .modal-content {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    background-color: #FFFFFF;
+    transform: translateX(100%);
+    border-radius: 0;
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+
+  &.show {
+    .modal-content {
+      z-index: 999;
+      -webkit-animation: showModal3 0.25s ease-in-out forwards;
+      -o-animation: showModal3 0.25s ease-in-out forwards;
+      animation: showModal3 0.25s ease-in-out forwards;
+    }
+
+    .overlay {
+      display: block;
+    }
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 98;
+  }
+}
+
+@keyframes showModal3 {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+}
+#detail-table {
+  input {
+    border: 0;
+    background: transparent;
+    padding: 0 5px;
+  }
+}
+.loader-container {
+  height: 100%;
+  width: 100%;
+  @include flex(center, center);
+  flex: 1;
+}
+.loader {
+  width: 28px;
+  height: 28px;
+  border: 3px solid;
+  border-color: var(--primary) transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  -webkit-animation: rotation 1s linear infinite;
+  -o-animation: rotation 1s linear infinite;
+  animation: rotation 1s linear infinite;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

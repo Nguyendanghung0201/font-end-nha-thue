@@ -1,0 +1,45 @@
+@import "global/variables";
+@import "global/component";
+@import "global/animations";
+@import "global/states";
+
+@import "modules/dropdown-toggle";
+@import "modules/open-indicator";
+@import "modules/clear";
+@import "modules/dropdown-menu";
+@import "modules/dropdown-option";
+@import "modules/selected";
+@import "modules/search-input";
+@import "modules/spinner";
+
+.vs__search, .vs__search:focus {
+  color: $input-placeholder-color;
+}
+
+.vs__dropdown-toggle {
+  border-color: $input-border-color;
+  .vs--open & {
+    border-color: $vs-border-color;
+  }
+}
+
+.vs__dropdown-menu {
+  padding: 6px;
+
+  .vs__dropdown-option {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    color: #526484;
+    font-size: 0.8rem;
+
+    &:not(:last-child) {
+      margin-bottom: 0.125rem;
+    }
+
+    &--highlight,
+    &--selected {
+      background: #ebeef2;
+      color: #526484;
+    }
+  }
+}
